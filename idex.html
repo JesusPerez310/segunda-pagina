@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Interactivo | Control Panel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Selector de Tema (Hidden Checkbox para control CSS puro) -->
+    <input type="checkbox" id="theme-toggle" class="theme-toggle" aria-label="Alternar tema claro/oscuro">
+    
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="logo">
+                <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
+                    <rect x="4" y="4" width="16" height="16" fill="var(--primary-color)" rx="2"/>
+                    <rect x="24" y="4" width="12" height="12" fill="var(--accent-color)" rx="2"/>
+                    <rect x="4" y="24" width="12" height="12" fill="var(--success-color)" rx="2"/>
+                    <rect x="20" y="24" width="16" height="12" fill="var(--warning-color)" rx="2"/>
+                </svg>
+                <h1>Dashboard Control</h1>
+            </div>
+            <label for="theme-toggle" class="theme-button" aria-label="Cambiar tema">
+                <span class="theme-icon sun-icon" aria-hidden="true">☀️</span>
+                <span class="theme-icon moon-icon" aria-hidden="true">🌙</span>
+            </label>
+        </div>
+    </header>
+
+    <!-- Barra lateral de navegación -->
+    <nav class="sidebar" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-list">
+            <li><a href="#dashboard" class="nav-link active" aria-current="page">📊 Dashboard</a></li>
+            <li><a href="#analytics" class="nav-link">📈 Analytics</a></li>
+            <li><a href="#reports" class="nav-link">📄 Reportes</a></li>
+            <li><a href="#settings" class="nav-link">⚙️ Configuración</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="main-content" role="main">
+        <div class="dashboard-container">
+            <!-- Section 1: Indicadores principales -->
+            <section class="dashboard-section" aria-labelledby="metrics-heading">
+                <h2 id="metrics-heading" class="section-title">Métricas Principales</h2>
+                <div class="metrics-grid">
+                    <!-- Widget 1: Revenue -->
+                    <article class="metric-card" role="region" aria-label="Ingresos totales">
+                        <div class="metric-header">
+                            <h3>Ingresos</h3>
+                            <span class="metric-icon">💰</span>
+                        </div>
+                        <div class="metric-value">$45,320</div>
+                        <div class="metric-change positive">↑ 12.5%</div>
+                        <div class="metric-bar">
+                            <div class="bar-fill animated" style="--progress: 75%"></div>
+                        </div>
+                    </article>
+
+                    <!-- Widget 2: Users -->
+                    <article class="metric-card" role="region" aria-label="Usuarios activos">
+                        <div class="metric-header">
+                            <h3>Usuarios</h3>
+                            <span class="metric-icon">👥</span>
+                        </div>
+                        <div class="metric-value">8,234</div>
+                        <div class="metric-change positive">↑ 8.2%</div>
+                        <div class="metric-bar">
+                            <div class="bar-fill animated" style="--progress: 85%"></div>
+                        </div>
+                    </article>
+
+                    <!-- Widget 3: Orders -->
+                    <article class="metric-card" role="region" aria-label="Órdenes completadas">
+                        <div class="metric-header">
+                            <h3>Órdenes</h3>
+                            <span class="metric-icon">🛒</span>
+                        </div>
+                        <div class="metric-value">1,456</div>
+                        <div class="metric-change negative">↓ 2.1%</div>
+                        <div class="metric-bar">
+                            <div class="bar-fill animated" style="--progress: 62%"></div>
+                        </div>
+                    </article>
+
+                    <!-- Widget 4: Conversión -->
+                    <article class="metric-card" role="region" aria-label="Tasa de conversión">
+                        <div class="metric-header">
+                            <h3>Conversión</h3>
+                            <span class="metric-icon">🎯</span>
+                        </div>
+                        <div class="metric-value">3.24%</div>
+                        <div class="metric-change positive">↑ 0.5%</div>
+                        <div class="metric-bar">
+                            <div class="bar-fill animated" style="--progress: 32%"></div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 2: Gráficos y análisis -->
+            <section class="dashboard-section wide" aria-labelledby="charts-heading">
+                <h2 id="charts-heading" class="section-title">Análisis de Actividad</h2>
+                <div class="charts-container">
+                    <!-- Chart 1: Line Chart Simulado -->
+                    <article class="chart-card" role="region" aria-label="Gráfico de tendencias">
+                        <h3>Tendencias Mensuales</h3>
+                        <div class="mini-chart">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 65%"></div>
+                            <div class="chart-bar" style="height: 55%"></div>
+                            <div class="chart-bar" style="height: 78%"></div>
+                            <div class="chart-bar" style="height: 62%"></div>
+                            <div class="chart-bar" style="height: 85%"></div>
+                            <div class="chart-bar" style="height: 92%"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Sem 1</span>
+                            <span>Sem 2</span>
+                            <span>Sem 3</span>
+                            <span>Sem 4</span>
+                            <span>Sem 5</span>
+                            <span>Sem 6</span>
+                            <span>Sem 7</span>
+                        </div>
+                    </article>
+
+                    <!-- Chart 2: Donut Chart Simulado -->
+                    <article class="chart-card" role="region" aria-label="Distribución de usuarios">
+                        <h3>Distribución de Usuarios</h3>
+                        <div class="donut-chart">
+                            <div class="donut-segment" style="--start: 0; --size: 45;" aria-label="Premium: 45%"></div>
+                            <div class="donut-segment" style="--start: 45; --size: 30;" aria-label="Standard: 30%"></div>
+                            <div class="donut-segment" style="--start: 75; --size: 25;" aria-label="Free: 25%"></div>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item">
+                                <span class="legend-color premium"></span>
+                                <span>Premium (45%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color standard"></span>
+                                <span>Standard (30%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-color free"></span>
+                                <span>Free (25%)</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 3: Actividades recientes -->
+            <section class="dashboard-section wide" aria-labelledby="activities-heading">
+                <h2 id="activities-heading" class="section-title">Actividades Recientes</h2>
+                <div class="activity-list">
+                    <article class="activity-item" role="listitem">
+                        <div class="activity-icon success">✓</div>
+                        <div class="activity-content">
+                            <h4>Nueva compra completada</h4>
+                            <p>Usuario ID #4521 completó una orden por $234.50</p>
+                        </div>
+                        <time datetime="2025-12-05T14:30:00" class="activity-time">Hace 2 min</time>
+                    </article>
+
+                    <article class="activity-item" role="listitem">
+                        <div class="activity-icon info">ℹ</div>
+                        <div class="activity-content">
+                            <h4>Sistema actualizado</h4>
+                            <p>Base de datos sincronizada correctamente</p>
+                        </div>
+                        <time datetime="2025-12-05T14:15:00" class="activity-time">Hace 15 min</time>
+                    </article>
+
+                    <article class="activity-item" role="listitem">
+                        <div class="activity-icon warning">⚠</div>
+                        <div class="activity-content">
+                            <h4>Advertencia de rendimiento</h4>
+                            <p>El servidor está usando 78% de CPU</p>
+                        </div>
+                        <time datetime="2025-12-05T14:00:00" class="activity-time">Hace 30 min</time>
+                    </article>
+
+                    <article class="activity-item" role="listitem">
+                        <div class="activity-icon success">✓</div>
+                        <div class="activity-content">
+                            <h4>Backup completado</h4>
+                            <p>Copia de seguridad diaria ejecutada exitosamente</p>
+                        </div>
+                        <time datetime="2025-12-05T13:30:00" class="activity-time">Hace 1 hora</time>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 4: Widgets reordenables (Interactividad CSS puro) -->
+            <section class="dashboard-section wide" aria-labelledby="widgets-heading">
+                <h2 id="widgets-heading" class="section-title">Panel de Control (Click para expandir)</h2>
+                <div class="widgets-grid">
+                    <!-- Widget Reordenable 1 -->
+                    <input type="checkbox" id="widget-1" class="widget-toggle" hidden>
+                    <article class="widget-card" role="region" aria-label="Widget de tareas">
+                        <label for="widget-1" class="widget-header">
+                            <h3>📋 Tareas Pendientes</h3>
+                            <span class="widget-toggle-icon">⊕</span>
+                        </label>
+                        <div class="widget-content">
+                            <ul class="task-list" role="list">
+                                <li role="listitem"><input type="checkbox" aria-label="Revisar reportes"> Revisar reportes</li>
+                                <li role="listitem"><input type="checkbox" aria-label="Actualizar código"> Actualizar código</li>
+                                <li role="listitem"><input type="checkbox" checked aria-label="Llamada con equipo"> Llamada con equipo</li>
+                                <li role="listitem"><input type="checkbox" aria-label="Enviar propuesta"> Enviar propuesta</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Widget Reordenable 2 -->
+                    <input type="checkbox" id="widget-2" class="widget-toggle" hidden>
+                    <article class="widget-card" role="region" aria-label="Widget de notificaciones">
+                        <label for="widget-2" class="widget-header">
+                            <h3>🔔 Notificaciones</h3>
+                            <span class="widget-toggle-icon">⊕</span>
+                        </label>
+                        <div class="widget-content">
+                            <div class="notification-badge">
+                                <span class="badge-count">3</span>
+                                <span class="badge-label">Nuevas</span>
+                            </div>
+                            <p class="text-muted">Últimas notificaciones:</p>
+                            <ul role="list">
+                                <li role="listitem">📧 Email del equipo</li>
+                                <li role="listitem">📱 Comentario en proyecto</li>
+                                <li role="listitem">🔄 Sincronización completada</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <!-- Widget Reordenable 3 -->
+                    <input type="checkbox" id="widget-3" class="widget-toggle" hidden>
+                    <article class="widget-card" role="region" aria-label="Widget de equipo">
+                        <label for="widget-3" class="widget-header">
+                            <h3>👨‍💼 Mi Equipo</h3>
+                            <span class="widget-toggle-icon">⊕</span>
+                        </label>
+                        <div class="widget-content">
+                            <div class="team-members">
+                                <div class="member">
+                                    <div class="avatar online">JS</div>
+                                    <span>Juan</span>
+                                </div>
+                                <div class="member">
+                                    <div class="avatar online">MA</div>
+                                    <span>María</span>
+                                </div>
+                                <div class="member">
+                                    <div class="avatar offline">CR</div>
+                                    <span>Carlos</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Widget Reordenable 4 -->
+                    <input type="checkbox" id="widget-4" class="widget-toggle" hidden>
+                    <article class="widget-card" role="region" aria-label="Widget de rendimiento">
+                        <label for="widget-4" class="widget-header">
+                            <h3>⚡ Rendimiento</h3>
+                            <span class="widget-toggle-icon">⊕</span>
+                        </label>
+                        <div class="widget-content">
+                            <div class="performance-item">
+                                <label>CPU</label>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%"></div>
+                                </div>
+                                <span class="progress-text">65%</span>
+                            </div>
+                            <div class="performance-item">
+                                <label>Memoria</label>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 48%"></div>
+                                </div>
+                                <span class="progress-text">48%</span>
+                            </div>
+                            <div class="performance-item">
+                                <label>Almacenamiento</label>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 82%"></div>
+                                </div>
+                                <span class="progress-text">82%</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Section 5: Indicadores animados -->
+            <section class="dashboard-section" aria-labelledby="status-heading">
+                <h2 id="status-heading" class="section-title">Estado del Sistema</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <div class="status-indicator pulse"></div>
+                        <span>Servidor Principal</span>
+                        <span class="status-label active">Activo</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-indicator pulse"></div>
+                        <span>Base de Datos</span>
+                        <span class="status-label active">Activo</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-indicator pulse warning"></div>
+                        <span>API Gateway</span>
+                        <span class="status-label warning">Limitado</span>
+                    </div>
+                    <div class="status-item">
+                        <div class="status-indicator"></div>
+                        <span>Cache</span>
+                        <span class="status-label inactive">Inactivo</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <p>&copy; 2025 Dashboard Control. Diseño responsivo y accesible con HTML/CSS avanzado.</p>
+        <p class="footer-links">
+            <a href="#" aria-label="Política de privacidad">Privacidad</a> | 
+            <a href="#" aria-label="Términos de servicio">Términos</a> | 
+            <a href="#" aria-label="Contacto">Contacto</a>
+        </p>
+    </footer>
+</body>
+</html>
